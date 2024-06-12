@@ -10,7 +10,7 @@
 
 ---
 # Service Architecture
-![image](https://github.com/cwc-moamoa/moamoa/assets/149165093/efc3a023-6b81-4f8d-933d-3ed4d22bf4e3)
+![image](https://github.com/cwc-moamoa/moamoa/assets/149165093/3cb0311e-d5df-4794-b0b9-ba04d080ec14)
 
 
 
