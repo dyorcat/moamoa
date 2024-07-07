@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*
 
 @Validated
 @RestController
-@CrossOrigin(origins = ["*"], allowedHeaders = ["*"])
 class ReviewController(
     private val reviewService: ReviewService,
 ) {
@@ -36,7 +35,7 @@ class ReviewController(
             .body(results)
     }
 
-    @GetMapping("/review/{reviewId}")
+    @GetMapping("/reviews/{reviewId}")
     fun getReviewById(
         @PathVariable reviewId: Long,
     ): ResponseEntity<ReviewResponse> {
@@ -44,7 +43,7 @@ class ReviewController(
         return ResponseEntity.ok(review)
     }
 
-    @GetMapping("/product/{productId}")
+    @GetMapping("/products/{productId}")
     fun getPaginatedReviewList(
         @PathVariable productId: Long,
         @PageableDefault(size = 15, sort = ["id"], direction = Sort.Direction.ASC) pageable: Pageable,
@@ -85,7 +84,7 @@ class ReviewController(
         return ResponseEntity.ok(reviews)
     }
 
-    @GetMapping("/review/get/{orderId}")
+    @GetMapping("/reviews/get/{orderId}")
     fun getReviewByOrderId(@PathVariable orderId: Long): ResponseEntity<ReviewResponse> {
         val review = reviewService.getReviewByOrderId(orderId)
         return ResponseEntity.ok(review)
